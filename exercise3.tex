@@ -78,8 +78,6 @@ There are a lot of possibillities to do, and way to many variables to model. So 
 \subsubsection{Certain variables}
 Here are the certain variables for our exercise. 
 
-\subsubsection*{Level}
-Do I have a higher level than my enemy?
 
 \subsubsection*{Health}
 How much health do I have?
@@ -88,7 +86,7 @@ How much health do I have?
 How much health do my enemy have?
 
 \subsubsection*{UltimateAttack}
-Can I use my ultimate attack?
+Can I use my ultimate attack? This is a skill that is not always aviable, and I might not have it active.
 
 \subsubsection*{AlliedMinions}
 Do I have minions with me that will attack my enemy?
@@ -108,26 +106,26 @@ Will I hit my enemy with my attack?
 Will my hit be critical?
 
 \subsubsection*{EnemyAttack}
-Will the enemy attack?
+Will the enemy attack? This is dependent on all of the certain variables. The stronger the enemy is and the weaker we are, the greater is the chance that he will attack.
 
 \subsubsection*{EnemyUltimate}
-Will the enemy use its ultimate attack?
+Will the enemy use its ultimate attack? If I have little healt the enemy is more likely to use his ultimate in order to kill me.
 
 \subsubsection*{EnemyActive}
 Will the enemy use a spell to survive my ultimate? 
 
 \subsubsection*{Ganked}
-Will I be attacked my multiple enemies? 
+Will I be attacked my multiple enemies? This is dependent on my healt, because the weaker I am the easier I am to gank/be killed.
 
 
 \subsection{Decisions}
 The different actions to take are:
 \subsubsection*{Attack}
-This decision is wheter we want to attack our opponent or not.
+This decision is wheter we want to attack our opponent or not. The stronger I am and the weaker the enemy is, the more likely I am to attack.
 \subsubsection*{Retreat}
-This decision is wheter we want to run away from the enemy or not.
+This decision is wheter we want to run away from the enemy or not. If I am weaker than my enemy, and are beeing attacked, I am more likely to retreat.
 \subsubsection*{Attack minions}
-Get gold by killing minions.
+Get gold by killing minions. If there are enemy minions, and I am weaker than my enemy or equally strong, I am more likely to just attack minions and get gold.
 \subsubsection*{Return to base}
 Go back to base to buy items and heal up.
 \subsubsection*{Take jungle camps}
