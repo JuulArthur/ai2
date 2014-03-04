@@ -65,9 +65,9 @@ Sammendrag av rapporten
 
 %man pleier å starte med innledning
 \section{Task 0}
-We have chosen to model the decisions you can do when playing the computer game Smite. Smite is a MOBA game where players cooperate and compete with each other over internett. Each game has 10 players, called gods, where 5 players are on each team. The goal of the game is to defeate the enemy gods and destroy their base. More specifically we have chosen the to model the decision of one of these players, when figthing against the other players. The question the player asks himself is "what should I do now?".
+We have chosen to model the decisions you can do when playing the computer game Smite. Smite is a MOBA (Multiplayer online battle arena) game where players cooperate and compete with each other over internett. Each game has 10 players, called gods, where 5 players are on each team. The goal of the game is to defeate the enemy gods and destroy their base. More specifically we have chosen the to model the decision of one of these players, when figthing against the other players. The question the player asks himself is "what should I do now?".
 
-There are a lot of possibillities to do, and way to many variables to model. So we have limited this task to model only specefic parts of the game, and only take into consideration limited information. There are a lot of teamwork that can be done in this game, but we have choosen to not model this.
+There are a lot of possibillities to do, and way to many variables to model. So we have limited this task to model only specefic parts of the game, and only take into consideration limited information. There are a lot of teamwork that can be done in this game, but we have choosen to not model this. We do not model
 
 \newpage
 
@@ -109,13 +109,13 @@ Will my hit be critical?
 Will the enemy attack? This is dependent on all of the certain variables. The stronger the enemy is and the weaker we are, the greater is the chance that he will attack.
 
 \subsubsection*{EnemyUltimate}
-Will the enemy use its ultimate attack? If I have little healt the enemy is more likely to use his ultimate in order to kill me.
+Will the enemy use its ultimate attack? If I have little or medium health the enemy is more likely to use his ultimate in order to kill me. If the enemy has little health he is also more likely to use his ultimate in order to kill me before I am able to kill him.
 
 \subsubsection*{EnemyActive}
 Will the enemy use a spell to survive my ultimate? 
 
 \subsubsection*{Ganked}
-Will I be attacked my multiple enemies? This is dependent on my healt, because the weaker I am the easier I am to gank/be killed.
+Will I be attacked my multiple enemies? This is dependent on my health, because the weaker I am the easier I am to gank/be killed.
 
 
 \subsection{Decisions}
@@ -127,11 +127,8 @@ This decision is wheter we want to run away from the enemy or not. If I am weake
 \subsubsection*{Attack minions}
 Get gold by killing minions. If there are enemy minions, and I am weaker than my enemy or equally strong, I am more likely to just attack minions and get gold.
 \subsubsection*{Return to base}
-Go back to base to buy items and heal up.
-\subsubsection*{Take jungle camps}
-Get more gold and exp by clearing jungle camps
-\subsubsection*{Go for gank}
-Help your teammates to kill enemy gods
+Go back to base to buy items and heal up. If I have little healt, or are weaker than my enemy I am more likely to go back to base to come back into the fight stronger.
+
 %\begin{itemize}
 %\item Attack - This decision is wheter we want to attack our opponent or not.
 %\item Retreat - This decision is wheter we want to run away from the enemy or not.
@@ -141,9 +138,9 @@ Help your teammates to kill enemy gods
 %\item Go for gank - Help your teammates to kill enemy gods
 %\end{itemize}
 
-\subsection{Utility functions}
+\subsection{Consequences}
 \subsubsection*{Don't die}
-It is not desirable to die. When you die you loose gold, give the enemy more experience and gold and leave your team more vulnarable while you are dead. This is the most desirable effect or your actions. If you have little health and are weaker than your enemy you have to be very careful not to die. This also means that you should gi back to base and heal up if you are close to death.
+It is not desirable to die. When you die you loose gold, give the enemy more experience and gold and leave your team more vulnarable while you are dead. This is the most desirable effect or your actions. If you have little health and are weaker than your enemy you have to be very careful not to die. This also means that you should go back to base and heal up if you are close to death.
 \subsubsection*{Kill enemy}
 It is very desirable to kill the enemy. This will leave you stronger and the enemy will be weaker. This can both be achieved by killing the enemy in your lane or by helping your team by going for a gank. There is a risk though going for a kill, because you can easily get killed yourself.
 \subsubsection*{Get gold}
@@ -157,7 +154,7 @@ To get gold is crucial to win the game. This is done by either killing enemy god
 \section*{Seksjon som ikke er nummerert}
 Blabla
 %\\ %tvinger frem en ny linje, kan kombineres til flere \\\\ => to nye linjer
-``Her kommre ting i hermetegn'' %forferdelig at det er disse to tegna som brukes, men sånn er det
+``Her kommer ting i hermetegn'' %forferdelig at det er disse to tegna som brukes, men sånn er det
 %\\\\
 %\\\\
 \textbf{Tykk tekst}
