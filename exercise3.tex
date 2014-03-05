@@ -3,6 +3,7 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{parskip}
+\usepackage{multirow}
 %\usepackage[latin1]{inputenc}
 \usepackage{graphicx}
 \usepackage{float}
@@ -148,6 +149,26 @@ We have modelled the exercise in GeNIe. Where we have the known variables in lig
 \includegraphics[width=400px]{InfluenceDiagram.PNG}
 \caption{Influence diagram}
 \end{figure}
+
+
+\begin{tabular}{ |l|l|l|l| }
+
+\hline
+KillEnemy & Survive & GetGold & Value \\
+\multirow{4}{*}{Yes} & \multirow{2}{*}{Yes} & Yes & 1 \\
+ & No & 0.8 \\
+ & \multirow{2}{*}{Yes} & Yes & 0.4 \\
+ & No & 0.2 \\ \hline
+
+ \multirow{4}{*}{No} & \multirow{2}{*}{Yes} & Yes & 0.7 \\
+ & No & 0.6 \\
+ & \multirow{2}{*}{Yes} & Yes & 0.05 \\
+ & No & 0 \\ \hline
+
+\hline
+
+\end{tabular}
+
 
 \newpage
 
