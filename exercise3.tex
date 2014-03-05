@@ -67,9 +67,9 @@
 
 %man pleier å starte med innledning
 \section{Deciding what to model}
-We have chosen to model the decisions you can do when playing the computer game Smite. Smite is a MOBA (Multiplayer online battle arena) game where players cooperate and compete with each other over internett. Each game has 10 players, called gods, where 5 players are on each team. The goal of the game is to defeate the enemy gods and destroy their base. More specifically we have chosen the to model the decision of one of these players, when figthing against the other players. The question the player asks himself is "what should I do now?".
+We have chosen to model the decisions you can do when playing the computer game Smite. Smite is a MOBA (Multiplayer online battle arena) game where players cooperate and compete with each other over internett. Each game has 10 players, called gods, where 5 players are on each team. The goal of the game is to defeat the enemy gods and destroy their base. More specifically we have chosen the to model the decision of one of these players, when fighting against the other players. The question the player asks himself is "what should I do now?".
 
-There are a lot of possibillities to do, and way to many variables to model. So we have limited this task to model only specefic parts of the game, and only take into consideration limited information. There are a lot of teamwork that can be done in this game, but we have choosen not to model this. We focus on the battle between us and one enemy god, and only model the other enemy as a group that can come and attack us.
+There are a lot of possibilities to do, and way to many variables to model. So we have limited this task to model only specific parts of the game, and only take into consideration limited information. There are a lot of teamwork that can be done in this game, but we have chosen not to model this. We focus on the battle between us and one enemy god, and only model the other enemies as a group that can come and attack us.
 
 
 \section{Defining variables and decisions}
@@ -106,7 +106,7 @@ Will the enemy use its ultimate attack? If I have little or medium health the en
 Will I be attacked my multiple enemies? This is dependent on my health and whether I have allied minions or not, because the weaker I am the easier I am to gank/be killed.
 
 \subsubsection*{Survive}
-It is not desirable to die. When you die you lose gold, give the enemy more experience and gold. You also leave your team more vulnarable while you are dead. If you have little health and are weaker than your enemy you have to be very careful not to die. This also means that you are more likely to retreat if you are close to death.
+It is not desirable to die. When you die you lose gold, give the enemy more experience and gold. You also leave your team more vulnerable while you are dead. If you have little health and are weaker than your enemy you have to be very careful not to die. This also means that you are more likely to retreat if you are close to death.
 
 \subsubsection*{KillEnemy}
 It is very desirable to kill the enemy. This will leave you stronger and the enemy will be weaker. There is a risk though going for a kill, because you can easily get killed yourself.
@@ -118,10 +118,10 @@ To get gold is crucial to win the game, the more gold you have the stronger your
 \subsection{Decisions}
 
 \subsubsection*{Attack}
-This decision is wheter we want to attack our opponent or not. The stronger I am and the weaker the enemy is, the more likely I am to attack.
+This decision is whether we want to attack our opponent or not. The stronger I am and the weaker the enemy is, the more likely I am to attack.
 
 \subsubsection*{Retreat}
-This decision is wheter we want to run away from the enemy or not. If I am weaker than my enemy and think I'm about to be attacked, I am more likely to retreat.
+This decision is whether we want to run away from the enemy or not. If I am weaker than my enemy and think I'm about to be attacked, I am more likely to retreat.
 
 \subsubsection*{AttackMinions}
 Get gold by killing minions. If there are enemy minions, and I am weaker than my enemy or equally strong, I am more likely to just attack minions and get gold. It is also possible to attack other minions than the ones your enemy has. 
@@ -129,7 +129,7 @@ Get gold by killing minions. If there are enemy minions, and I am weaker than my
 \newpage
 
 \section{The qualitative part}
-We have modelled the exercise in GeNIe. Where we have the known variables in light blue, the unknown variables are orange, the utility function in dark blue and decisions in green. The probabilities we have used are not very accurate, but we have tried to give as good values as we can. Some values like critical hit is given by the game, but the other values are just guessed. We have chosen to collect the variables in three categories that again affect the utility funciton. This is in order to keep the utility table as little and orderly as possible. We had to remove some variables in order to reduce the complexity and make the modelling managable.
+We have modelled the exercise in GeNIe. Where we have the known variables in light blue, the unknown variables are orange, the utility function in dark blue and decisions in green. The probabilities we have used are not very accurate, but we have tried to give as good values as we can. Some values like critical hit is given by the game, but the other values are just guessed. We have chosen to collect the variables in three categories that again affect the utility function. This is in order to keep the utility table as little and orderly as possible. We had to remove some variables in order to reduce the complexity and make the modelling manageable.
 
 \begin{figure}[H]
 \label{fig:Influencediagram}
@@ -137,7 +137,7 @@ We have modelled the exercise in GeNIe. Where we have the known variables in lig
 \caption{Influence diagram}
 \end{figure}
 
-The tables to the different variables are too huge to show in this delivery. We have instead chosen to show extracts from two of the tables. This shows how we have modelled the different variables. We can se from Figure~\ref{fig:KillEnemy} how likely we are to kill the enemy given ultimate Attack, enemy Health, allied Minions, and decisions. We see that as long as the enemy has medium health and we have our ultimate we think we have a good possibility to kill the enemy. We also see that it is easier to kill the enemy if we have allied minions as they will help us in the fight. If we don't attack the enemy god we have a 0\% chance of killing him, which is resonable.
+The tables to the different variables are too huge to show in this delivery. We have instead chosen to show extracts from two of the tables. This shows how we have modelled the different variables. We can se from Figure~\ref{fig:KillEnemy} how likely we are to kill the enemy given ultimate Attack, enemy Health, allied Minions, and decisions. We see that as long as the enemy has medium health and we have our ultimate we think we have a good possibility to kill the enemy. We also see that it is easier to kill the enemy if we have allied minions as they will help us in the fight. If we don't attack the enemy god we have a 0\% chance of killing him, which is reasonable.
 
 \begin{figure}[H]
 \includegraphics[width=400px]{KillEnemy.PNG}
@@ -154,7 +154,7 @@ We see that that if the enemy use their ultimate, and we are attacked by the ene
 \label{fig:Survive}
 \end{figure}
 
-\section{Utility function}The utility function is based on how the diffrent outcomes affect the strength of our team and the god we are playing. The bigger the chance that an action will help our team, the better the action is. We have tried to modify the utility function to best represent how much diffrent actions will help the team. The exact numbers for this is of course very complicated and way to much reserch for this assignment, but we are confident that we have pretty good estimations. 
+\section{Utility function}The utility function is based on how the different outcomes affect the strength of our team and the god we are playing. The bigger the chance that an action will help our team, the better the action is. We have tried to modify the utility function to best represent how much different actions will help the team. The exact numbers for this is of course very complicated and way to much research for this assignment, but we are confident that we have pretty good estimations. 
 
 The most important thing is not to die. When you die your team are extremely vulnerable, because they have one more god than your team. You also give gold to the enemy, and loose gold yourself. As long as you stay alive you should be pretty happy. It is not adequate to just stay alive though, you have to get as much gold as you can and try to kill the enemy gods. To kill the enemy god is very good, because it will leave the enemy team in a bad spot and leave you safe. If you can't kill the enemy god and are pretty safe you should just kill minions to get more gold and become stronger.
 
@@ -179,7 +179,7 @@ KillEnemy & Survive & GetGold & Utility \\ \hline
 
 
 \section{Verification}
-To check that our modelling seems resonable, we have tried different values for our known variables. We see that we can get all the different decisions and that the decision made corresponds well with our initial thoughts. Bellow you can see some of the results we got after testing the model.
+To check that our modelling seems reasonable, we have tried different values for our known variables. We see that we can get all the different decisions and that the decision made corresponds well with our initial thoughts. Bellow you can see some of the results we got after testing the model.
 
 \subsection*{Attack minions decision}
 UltimateAttack = Yes \\*
@@ -194,7 +194,7 @@ EnemyMinions = Yes \\*
 \label{fig:atkMin}
 \end{figure}
 
-Since both players have high health and we don't have any minons to help us, there is little chance of killing the enemy or get killed. Therefore it seems resonable to kill the enemy minions and get more gold. There is little to gain by attacking the enemy or retreating.
+Since both players have high health and we don't have any minions to help us, there is little chance of killing the enemy or get killed. Therefore it seems reasonable to kill the enemy minions and get more gold. There is little to gain by attacking the enemy or retreating.
 
 \subsection*{Attack enemy decision}
 UltimateAttack = Yes \\*
@@ -226,8 +226,8 @@ EnemyMinions = Yes \\*
 
 Since we have little health, and the enemy has support from his minions it is best to just retreat. We don't have our ultimate attack so there is not much chance for us to fight back if we are attacked. 
 
-\section{team members' preferences}
-We have pretty much the same perception of how the uncertain variables should count. The only diffrence we have encountered is that we have a little diffrent playing styles, where one focus more on killing the enemy and the other focus more on surviving. We have after some discussion come to an agreement where we simply met in the middle.  
+\section{Team members' preferences}
+We have pretty much the same perception of how the uncertain variables should count. The only difference we have encountered is that we have a little different playing styles, where one focus more on killing the enemy and the other focus more on surviving. We have after some discussion come to an agreement where we simply met in the middle. 
 
 \end{document}
 
