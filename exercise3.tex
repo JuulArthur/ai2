@@ -7,6 +7,7 @@
 %\usepackage[latin1]{inputenc}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{caption}
 
 %---- Listings --------------
 \usepackage{color}
@@ -153,8 +154,12 @@ We have modelled the exercise in GeNIe. Where we have the known variables in lig
 
 \newpage
 
-\section{Utility function}
+\section{Utility function}The utility function is based on how the diffrent outcomes affect the strength of our team and the god we are playing. The bigger the chance that an action will help our team, the better the action is. We have tried to modify the utility function to best represent how much diffrent actions will help the team. The exact numbers for this is of course very complicated and way to much reserch for this assignment, but we are confident that we have pretty good estimations. 
 
+The most important thing is not to die. When you die your team are extremely vulnerable, because they have one more god than your team. You also give gold to the enemy, and loose gold yourself. As long as you stay alive you should be pretty happy. It is not adequate to just stay alive though, you have to get as much gold as you can and try to kill the enemy gods. To kill the enemy god is very good, because it will leave the enemy team in a bad spot and leave you safe. If you can't kill the enemy god and are pretty safe you should just kill minions to get more gold and become stronger.
+
+\begin{table}[H]
+\centering
 \begin{tabular}{ |c|c|c|c| }
 
 \hline
@@ -168,8 +173,9 @@ KillEnemy & Survive & GetGold & Value \\ \hline
  & & No & 0.6 \\ \cline{2-4}
  & \multirow{2}{*}{No} & Yes & 0.05 \\ \cline{3-4}
  & & No & 0 \\ \hline
-
 \end{tabular}
+\caption{Utility table}
+\end{table}
 
 
 \begin{thebibliography}{9}
