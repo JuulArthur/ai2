@@ -46,11 +46,11 @@
 %lager forsida
 \maketitle
 
-\renewcommand{\abstractname}{Summary}
+%\renewcommand{\abstractname}{Summary}
 %man burde ha med et sammendrag
-\begin{abstract}
-Sammendrag av rapporten
-\end{abstract}
+%\begin{abstract}
+%Sammendrag av rapporten
+%\end{abstract}
 
 %man skal ha romertall på de innholdsfortegnelse
 %før dette punktet skal man IKKE ha sidetall
@@ -67,7 +67,7 @@ Sammendrag av rapporten
 \section{Task 0}
 We have chosen to model the decisions you can do when playing the computer game Smite. Smite is a MOBA (Multiplayer online battle arena) game where players cooperate and compete with each other over internett. Each game has 10 players, called gods, where 5 players are on each team. The goal of the game is to defeate the enemy gods and destroy their base. More specifically we have chosen the to model the decision of one of these players, when figthing against the other players. The question the player asks himself is "what should I do now?".
 
-There are a lot of possibillities to do, and way to many variables to model. So we have limited this task to model only specefic parts of the game, and only take into consideration limited information. There are a lot of teamwork that can be done in this game, but we have choosen to not model this. We do not model
+There are a lot of possibillities to do, and way to many variables to model. So we have limited this task to model only specefic parts of the game, and only take into consideration limited information. There are a lot of teamwork that can be done in this game, but we have choosen not to model this. We focus on the battle between us and one enemy god, and only model the other enemy as a group that can come and attack us.
 
 \newpage
 
@@ -86,10 +86,10 @@ How much health do I have?
 How much health do my enemy have?
 
 \subsubsection*{UltimateAttack}
-Can I use my ultimate attack? This is a skill that is not always aviable, and I might not have it active.
+Can I use my ultimate attack? This is a skill that is not always available and I might not have it active, but it is the skill I have that deals the most damage.
 
 \subsubsection*{AlliedMinions}
-Do I have minions with me that will attack my enemy?
+Do I have minions with me that will attack my enemy? Minions are weak computer-controlled characters that attacks the enemy minions and gods.
 
 \subsubsection*{EnemyMinions}
 Do my enemy have minions that will attack me?
@@ -99,23 +99,27 @@ Do my enemy have minions that will attack me?
 \subsubsection{Uncertain variables}
 Here are the uncertain variables for our exercise. 
 
-\subsubsection*{AttackHit}
-Will I hit my enemy with my attack?
-
 \subsubsection*{CriticalHit}
-Will my hit be critical?
+Will my hit be a critical hit and deal extra damage?
 
 \subsubsection*{EnemyAttack}
 Will the enemy attack? This is dependent on all of the certain variables. The stronger the enemy is and the weaker we are, the greater is the chance that he will attack.
 
 \subsubsection*{EnemyUltimate}
-Will the enemy use its ultimate attack? If I have little or medium health the enemy is more likely to use his ultimate in order to kill me. If the enemy has little health he is also more likely to use his ultimate in order to kill me before I am able to kill him.
+Will the enemy use its ultimate attack? If I have little or medium health the enemy is more likely to use his ultimate in order to kill me. If the enemy has little health he is also more likely to use his ultimate in order to kill or stun me before I am able to kill him.
 
 \subsubsection*{EnemyActive}
-Will the enemy use a spell to survive my ultimate? 
+Will the enemy use a spell to survive my ultimate? In order for him to do this he has to be fast enough and he must have the spell available.
 
 \subsubsection*{Ganked}
 Will I be attacked my multiple enemies? This is dependent on my health, because the weaker I am the easier I am to gank/be killed.
+
+\subsubsection*{Survive}
+It is not desirable to die. When you die you loose gold, give the enemy more experience and gold. You also leave your team more vulnarable while you are dead. If you have little health and are weaker than your enemy you have to be very careful not to die. This also means that you should go back to base and heal up if you are close to death.
+\subsubsection*{Kill enemy}
+It is very desirable to kill the enemy. This will leave you stronger and the enemy will be weaker. This can both be achieved by killing the enemy in your lane/area or by helping your team by going for a gank. There is a risk though going for a kill, because you can easily get killed yourself.
+\subsubsection*{Get gold}
+To get gold is crucial to win the game. This is done by either killing enemy gods or by attacking minions. If you get more gold than your opponent you will also be stronger. This effect is depentend on the other consequences, but we have chosen to model it independently because it gives some extra information. You do also get gold by killing enemy minions. 
 
 
 \subsection{Decisions}
@@ -123,11 +127,9 @@ The different actions to take are:
 \subsubsection*{Attack}
 This decision is wheter we want to attack our opponent or not. The stronger I am and the weaker the enemy is, the more likely I am to attack.
 \subsubsection*{Retreat}
-This decision is wheter we want to run away from the enemy or not. If I am weaker than my enemy, and are beeing attacked, I am more likely to retreat.
+This decision is wheter we want to run away from the enemy or not. If I am weaker than my enemy and think I'm about to be attacked, I am more likely to retreat.
 \subsubsection*{Attack minions}
 Get gold by killing minions. If there are enemy minions, and I am weaker than my enemy or equally strong, I am more likely to just attack minions and get gold.
-\subsubsection*{Return to base}
-Go back to base to buy items and heal up. If I have little healt, or are weaker than my enemy I am more likely to go back to base to come back into the fight stronger.
 
 %\begin{itemize}
 %\item Attack - This decision is wheter we want to attack our opponent or not.
@@ -138,26 +140,13 @@ Go back to base to buy items and heal up. If I have little healt, or are weaker 
 %\item Go for gank - Help your teammates to kill enemy gods
 %\end{itemize}
 
-\subsection{Consequences}
-\subsubsection*{Don't die}
-It is not desirable to die. When you die you loose gold, give the enemy more experience and gold and leave your team more vulnarable while you are dead. This is the most desirable effect or your actions. If you have little health and are weaker than your enemy you have to be very careful not to die. This also means that you should go back to base and heal up if you are close to death.
-\subsubsection*{Kill enemy}
-It is very desirable to kill the enemy. This will leave you stronger and the enemy will be weaker. This can both be achieved by killing the enemy in your lane or by helping your team by going for a gank. There is a risk though going for a kill, because you can easily get killed yourself.
-\subsubsection*{Get gold}
-To get gold is crucial to win the game. This is done by either killing enemy gods or by attacking minions. If you get more gold than your opponent you will also be stronger. This effect is depentend on the other utility functions, but we have chosen to model it independently because it gives some extra information. 
-
 
 
 %slutt seksjon med newpage
 \newpage
 
-\section*{Seksjon som ikke er nummerert}
-Blabla
-%\\ %tvinger frem en ny linje, kan kombineres til flere \\\\ => to nye linjer
-``Her kommer ting i hermetegn'' %forferdelig at det er disse to tegna som brukes, men sånn er det
-%\\\\
-%\\\\
-\textbf{Tykk tekst}
+\section{The qualitative part}
+We have modelled the exercise in GeNIe. Where we have the known variables to the left, then the unknown variables to the right of them. They all lead to some consequences that eventually is used in our utility function to determine what actions we want to take. The reason why we have chosen to model the consequences is because our utility function would be very large otherwise.
 
 %%lag figur
 
@@ -172,20 +161,6 @@ Blabla
 %\includegraphics[width=0.25,angle=45]{navn.png}
 
 %tabell
-\begin{table}[H]
-   \centering
-   \label{tab:lulz}
-   \begin{tabular}{| l | c | r |}
-      \hline
-      1 & 2 & 3 \\
-      \hline
-      4 & 5 & 6 \\
-      \hline
-      7 & 8 & 9 \\
-      \hline
-   \end{tabular}
-   \caption{verdens beste tabell}
-\end{table}
 
 
 %inkludért seksjon, hva vi burde bruke
