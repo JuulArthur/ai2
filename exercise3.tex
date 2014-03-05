@@ -128,19 +128,6 @@ This decision is wheter we want to run away from the enemy or not. If I am weake
 \subsubsection*{AttackMinions}
 Get gold by killing minions. If there are enemy minions, and I am weaker than my enemy or equally strong, I am more likely to just attack minions and get gold. It is also possible to attack other minions than the ones your enemy has. 
 
-%\begin{itemize}
-%\item Attack - This decision is wheter we want to attack our opponent or not.
-%\item Retreat - This decision is wheter we want to run away from the enemy or not.
-%\item Attack minions  - Farm up gold by killing minions
-%\item Return to base - Go back to base to buy items and heal up
-%\item Take jungle camps - Get more gold and exp by clearing jungle camps
-%\item Go for gank - Help your teammates to kill enemy gods
-%\end{itemize}
-
-
-
-%slutt seksjon med newpage
-\newpage
 
 \section{The qualitative part}
 We have modelled the exercise in GeNIe. Where we have the known variables in light blue, the unknown variables are orange, the utility function in dark blue and decisions in green. The probabilities we have used are not very accurate, but we have tried to give as good values as we can. Some values like critical hit is given by the game, but the other values are just guessed. We have chosen to collect the variables in three categories that again affect the utility funciton. This is in order to keep the utility table as little and orderly as possible. We had to remove some variables in order to reduce the complexity and make the modelling managable.
@@ -149,6 +136,23 @@ We have modelled the exercise in GeNIe. Where we have the known variables in lig
 \label{fig:Influencediagram}
 \includegraphics[width=400px]{InfluenceDiagram.PNG}
 \caption{Influence diagram}
+\end{figure}
+
+The tables to the different variables are too huge to show in this delivery. We have instead chosen to show extracts from two of the tables. This shows how we have modelled the different variables. We can se from Figure~\ref{fig:KillEnemy} how likely we are to kill the enemy given ultimate Attack, enemy Health, allied Minions, and decisions. We see that as long as the enemy has medium health and we have our ultimate we think we have a good possibility to kill the enemy. We also see that it is easier to kill the enemy if we have allied minions as they will help us in the fight. If we don't attack the enemy god we have a 0\% chance of killing him, which is resonable.
+
+\begin{figure}[H]
+\includegraphics[width=400px]{KillEnemy.PNG}
+\caption{Kill Enemy table}
+\label{fig:KillEnemy}
+\end{figure}
+
+From this table we see how likely we are to survive given enemy ultimate, enemy attack, ganked and our health.
+We see that that if the enemy use  
+
+\begin{figure}[H]
+\includegraphics[width=400px]{SurviveTable.PNG}
+\caption{Survive table}
+\label{fig:Survive}
 \end{figure}
 
 
@@ -163,7 +167,7 @@ The most important thing is not to die. When you die your team are extremely vul
 \begin{tabular}{ |c|c|c|c| }
 
 \hline
-KillEnemy & Survive & GetGold & Value \\ \hline
+KillEnemy & Survive & GetGold & Utility \\ \hline
 \multirow{4}{*}{Yes} & \multirow{2}{*}{Yes} & Yes & 1 \\ \cline{3-4}
  & & No & 0.8 \\ \cline{2-4}
  & \multirow{2}{*}{No} & Yes & 0.4 \\ \cline{3-4}
