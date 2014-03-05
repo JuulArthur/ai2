@@ -151,28 +151,25 @@ We have modelled the exercise in GeNIe. Where we have the known variables in lig
 \end{figure}
 
 
-\begin{tabular}{ |l|l|l|l| }
-
-\hline
-KillEnemy & Survive & GetGold & Value \\
-\multirow{4}{*}{Yes} & \multirow{2}{*}{Yes} & Yes & 1 \\
- & No & 0.8 \\
- & \multirow{2}{*}{Yes} & Yes & 0.4 \\
- & No & 0.2 \\ \hline
-
- \multirow{4}{*}{No} & \multirow{2}{*}{Yes} & Yes & 0.7 \\
- & No & 0.6 \\
- & \multirow{2}{*}{Yes} & Yes & 0.05 \\
- & No & 0 \\ \hline
-
-\hline
-
-\end{tabular}
-
-
 \newpage
 
 \section{Utility function}
+
+\begin{tabular}{ |c|c|c|c| }
+
+\hline
+KillEnemy & Survive & GetGold & Value \\ \hline
+\multirow{4}{*}{Yes} & \multirow{2}{*}{Yes} & Yes & 1 \\ \cline{3-4}
+ & & No & 0.8 \\ \cline{2-4}
+ & \multirow{2}{*}{No} & Yes & 0.4 \\ \cline{3-4}
+ & & No & 0.2 \\ \hline
+
+ \multirow{4}{*}{No} & \multirow{2}{*}{Yes} & Yes & 0.7 \\ \cline{3-4}
+ & & No & 0.6 \\ \cline{2-4}
+ & \multirow{2}{*}{No} & Yes & 0.05 \\ \cline{3-4}
+ & & No & 0 \\ \hline
+
+\end{tabular}
 
 
 \begin{thebibliography}{9}
