@@ -99,31 +99,28 @@ Do my enemy have minions that will attack me?
 \subsubsection{Uncertain variables}
 Here are the uncertain variables for our exercise. 
 
-\subsubsection*{CriticalHit}
-Will my hit be a critical hit and deal extra damage?
-
 \subsubsection*{EnemyAttack}
-Will the enemy attack? This is dependent on all of the certain variables. The stronger the enemy is and the weaker we are, the greater is the chance that he will attack.
+Will the enemy attack? This is dependent on our health, the enemy's health and our minions. The stronger the enemy is and the weaker we are, the greater is the chance that he will attack.
 
 \subsubsection*{EnemyUltimate}
 Will the enemy use its ultimate attack? If I have little or medium health the enemy is more likely to use his ultimate in order to kill me. If the enemy has little health he is also more likely to use his ultimate in order to kill or stun me before I am able to kill him.
 
-\subsubsection*{EnemyActive}
-Will the enemy use a spell to survive my ultimate? In order for him to do this he has to be fast enough and he must have the spell available.
-
 \subsubsection*{Ganked}
-Will I be attacked my multiple enemies? This is dependent on my health, because the weaker I am the easier I am to gank/be killed.
+Will I be attacked my multiple enemies? This is dependent on my health and whether I have allied minions or not, because the weaker I am the easier I am to gank/be killed.
 
 \subsubsection*{Survive}
-It is not desirable to die. When you die you loose gold, give the enemy more experience and gold. You also leave your team more vulnarable while you are dead. If you have little health and are weaker than your enemy you have to be very careful not to die. This also means that you should go back to base and heal up if you are close to death.
-\subsubsection*{Kill enemy}
-It is very desirable to kill the enemy. This will leave you stronger and the enemy will be weaker. This can both be achieved by killing the enemy in your lane/area or by helping your team by going for a gank. There is a risk though going for a kill, because you can easily get killed yourself.
-\subsubsection*{Get gold}
+It is not desirable to die. When you die you lose gold, give the enemy more experience and gold. You also leave your team more vulnarable while you are dead. If you have little health and are weaker than your enemy you have to be very careful not to die. This also means that you are more likely to retreat if you are close to death.
+
+\subsubsection*{KillEnemy}
+It is very desirable to kill the enemy. This will leave you stronger and the enemy will be weaker. There is a risk though going for a kill, because you can easily get killed yourself.
+
+\subsubsection*{GetGold}
 To get gold is crucial to win the game. This is done by either killing enemy gods or by attacking minions. If you get more gold than your opponent you will also be stronger. This effect is depentend on the other consequences, but we have chosen to model it independently because it gives some extra information. You do also get gold by killing enemy minions. 
 
 
 \subsection{Decisions}
 The different actions to take are:
+
 \subsubsection*{Attack}
 This decision is wheter we want to attack our opponent or not. The stronger I am and the weaker the enemy is, the more likely I am to attack.
 \subsubsection*{Retreat}
