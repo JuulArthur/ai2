@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile version="1.0" id="Network1" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="EnemyMinions">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<decision id="Decisions">
+			<state id="Attack" />
+			<state id="Retreat" />
+			<state id="AttackMinions" />
+		</decision>
+		<cpt id="Health">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<probabilities>0.4 0.5 0.1</probabilities>
+		</cpt>
+		<cpt id="EnemyHealt">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<probabilities>0.4 0.5 0.1</probabilities>
+		</cpt>
+		<cpt id="GetGold">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>EnemyMinions Decisions Health EnemyHealt</parents>
+			<probabilities>0.1 0.9 0.3 0.7 0.75 0.25 0.05 0.95 0.2 0.8 0.55 0.45 0.04 0.96 0.15 0.85 0.45 0.55 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0.2 0.8 0.4 0.6 0.85 0.15 0.2 0.8 0.45 0.55 0.6 0.4 0.09 0.91 0.2 0.8 0.55 0.45 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1</probabilities>
+		</cpt>
+		<cpt id="UltimateAttack">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="AlliedMinions">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="KillEnemy">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>UltimateAttack EnemyHealt AlliedMinions Decisions</parents>
+			<probabilities>0.2 0.8 0 1 0 1 0.1 0.9 0 1 0 1 0.7 0.3 0 1 0 1 0.65 0.35 0 1 0 1 0.95 0.05 0 1 0 1 0.9 0.1 0 1 0 1 0.01 0.99 0 1 0 1 0 1 0 1 0 1 0.1 0.9 0 1 0 1 0.05 0.95 0 1 0 1 0.6 0.4 0 1 0 1 0.5 0.5 0 1 0 1</probabilities>
+		</cpt>
+		<cpt id="EnemyUltimate">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Health EnemyHealt Decisions</parents>
+			<probabilities>0.1 0.9 0.15 0.85 0.2 0.8 0.15 0.85 0.2 0.8 0.25 0.75 0.4 0.6 0.05 0.95 0 1 0.4 0.6 0.3 0.7 0.45 0.55 0.45 0.55 0.35 0.65 0.5 0.5 0.55 0.45 0.3 0.7 0 1 0.8 0.2 0.6 0.4 0.85 0.15 0.85 0.15 0.65 0.35 0.9 0.1 0.9 0.1 0.8 0.2 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="EnemyAttack">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Health EnemyHealt AlliedMinions Decisions</parents>
+			<probabilities>0.6 0.4 0.1 0.9 0.2 0.8 1 0 1 0 1 0 0.3 0.7 0.2 0.8 0.1 0.9 0.8 0.2 0.7 0.3 0.9 0.1 0 1 0 1 0 1 0.15 0.85 0.1 0.9 0.2 0.8 0.75 0.25 0.2 0.8 0.3 0.7 1 0 1 0 1 0 0.4 0.6 0.3 0.7 0.2 0.8 0.9 0.1 0.6 0.4 0.9 0.1 0.1 0.9 0 1 0.01 0.99 0.15 0.85 0.01 0.99 0.05 0.95 0.85 0.15 0.3 0.7 0.55 0.45 1 0 1 0 1 0 0.5 0.5 0.25 0.75 0.15 0.85 0.99 0.01 0.55 0.45 0.95 0.05 0.6 0.4 0.3 0.7 0.4 0.6 0.9 0.1 0.5 0.5 0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="Ganked">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Health AlliedMinions Decisions</parents>
+			<probabilities>0.15 0.85 0.1 0.9 0.05 0.95 0.15 0.85 0.1 0.9 0.1 0.9 0.2 0.8 0.15 0.85 0.15 0.85 0.25 0.75 0.15 0.85 0.2 0.8 0.8 0.2 0.2 0.8 0.5 0.5 0.9 0.1 0.25 0.75 0.6 0.4</probabilities>
+		</cpt>
+		<cpt id="Survive">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Health EnemyUltimate EnemyAttack Ganked</parents>
+			<probabilities>0.3 0.7 0.7 0.3 0.7 0.3 1 0 0.85 0.15 1 0 0.95 0.05 1 0 0.1 0.9 0.4 0.6 0.4 0.6 0.6 0.4 0.45 0.55 0.9 0.1 0.8 0.2 1 0 0.01 0.99 0.15 0.85 0.2 0.8 0.7 0.3 0.15 0.85 0.5 0.5 0.2 0.8 1 0</probabilities>
+		</cpt>
+		<utility id="Utility">
+			<parents>KillEnemy Survive GetGold</parents>
+			<utilities>1 0.8 0.4 0.2 0.7 0.6 0.05 0</utilities>
+		</utility>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.0.5079.0" name="Network1" faultnameformat="nodestate">
+			<node id="Health">
+				<name>Health</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>94 211 142 241</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="UltimateAttack">
+				<name>UltimateAttack</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>95 136 140 164</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="AlliedMinions">
+				<name>AlliedMinions</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>79 359 154 405</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="EnemyMinions">
+				<name>EnemyMinions</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>77 428 157 478</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Survive">
+				<name>Survive</name>
+				<interior color="ffcc99" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>600 343 657 378</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="KillEnemy">
+				<name>KillEnemy</name>
+				<interior color="ffcc99" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>387 128 446 164</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="EnemyAttack">
+				<name>EnemyAttack</name>
+				<interior color="ffcc99" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>373 346 462 376</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="EnemyUltimate">
+				<name>EnemyUltimate</name>
+				<interior color="ffcc99" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>379 420 459 470</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Ganked">
+				<name>Ganked</name>
+				<interior color="ffcc99" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>394 532 446 564</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Decisions">
+				<name>Decisions</name>
+				<interior color="00ff00" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>142 560 201 586</position>
+				<barchart active="true" width="187" height="77" />
+			</node>
+			<node id="EnemyHealt">
+				<name>EnemyHealth</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>93 290 141 320</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Utility">
+				<name>Utility</name>
+				<interior color="99ccff" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>840 255 885 287</position>
+				<barchart active="true" width="214" height="90" />
+			</node>
+			<node id="GetGold">
+				<name>GetGold</name>
+				<interior color="ffcc99" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>388 222 442 255</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
