@@ -42,21 +42,31 @@ def same_classification(examples):
 			return False
 	return True
 
-def decisiontree_learning(examples, attributes, parent_examples):
-	if len(examples) == 0:
-		return plurality_value(parent_examples)
-	elif same_classification(examples):
-		# If all examples has the same classification we can just return the classification of the first one
-		return examples[0].attribute
-	elif len(attributes) == 0:
-		return plurality_value(examples)
-	else:
-		#attribute = important_attribute()
-		return None
-
 def entropy(q):
 	B = -(q*log(q,2)+(1-q)*log(1-q,2))
 	return B
+
+def get_absolute_entropy(examples):
+	positives = 0
+	for example in examples:
+		if example[-1]=='-1':
+			positives+=1
+	return entropy(positives/len(examples))
+
+def importance(attributes, examples, use_random=False):
+	if use_random:
+		attribute = attributes.pop(random.randrange(len(attributes)))
+		return attribute
+	absolute_entropy = get_absolute_entropy(examples)
+	best_attribute = -1
+	attribute_gain = 0
+	else:
+		for attribute in attributes:
+			gain = absolute_entropy - check_attribute(attribute)
+			if best_attribute == -1 or attribute_gain < gain:
+				best_attribute = attribute
+				attribute_gain = gain
+	return attributes.pop(best_attribute)
 
 def check_attribute(examples, attribute):
 	positives = 0
@@ -82,29 +92,27 @@ def check_attribute(examples, attribute):
 	entropy += ((positives+negatives)/examples)*entropy(positives/(positives+negatives))
 	return entropy
 
-def get_absolute_entropy(examples):
-	positives = 0
-	for example in examples:
-		if example[-1]=='-1':
-			positives+=1
-	return entropy(positives/len(examples))
-
-def importance(attributes, examples, use_random=False):
-	if use_random:
-		attribute = attributes.pop(random.randrange(len(attributes)))
-		return attribute
-	absolute_entropy = get_absolute_entropy(examples)
-	best_attribute = -1
-	attribute_gain = 0
+def decisiontree_learning(examples, attributes, parent_examples):
+	if len(examples) == 0:
+		return plurality_value(parent_examples)
+	elif same_classification(examples):
+		# If all examples has the same classification we can just return the classification of the first one
+		return examples[0].attribute
+	elif len(attributes) == 0:
+		return plurality_value(examples)
 	else:
-		for attribute in attributes:
-			gain = absolute_entropy - check_attribute(attribute)
-			if best_attribute == -1 or attribute_gain < gain:
-				best_attribute = attribute
-				attribute_gain = gain
-	return attributes.pop(best_attribute)
-
-
+		attribute = importance(attributes, examples)
+		attributes.remove(attribute)
+		node = Node(attribute)
+		for value in ['1','2']:
+			exs = []
+			for example in examples:
+				if example[attribute]==value:
+					exs.append(example)
+			subtree = decisiontree_learning(exs, attributes, examples)
+			node.children.append(subtree)
+		return tree
+		
 def main():
 	content = input_file('test.txt')
 	print content
