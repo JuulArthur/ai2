@@ -1,4 +1,4 @@
-from main import Node, same_classification, plurality_value, entropy
+from main import Node, same_classification, plurality_value, entropy_func
 import math
 
 def test_same_classification_true():
@@ -29,7 +29,7 @@ def test_plurality_value():
 	return plurality_value(nodes)
 
 def test_entropy():
-	answer = math.floor(entropy(0.99)*100)/100
+	answer = math.floor(entropy_func(0.99)*100)/100
 	return answer==0.08
 
 def tests():
